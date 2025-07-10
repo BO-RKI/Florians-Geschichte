@@ -9,49 +9,52 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Storyline V1.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Storyline V1" startnode="24" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FF3313D9-894F-4103-AC4C-8CA4D9A81E24" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
-  font-family: 'Verdana', serif;
-  font-size: 18px;
-}
-
-/* Layout für Bild und Text nebeneinander */
-.bild-text-container {
+<tw-storydata name="Storyline V1" startnode="24" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FF3313D9-894F-4103-AC4C-8CA4D9A81E24" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.bild-text-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 1em;
+  align-items: center; /* vertikal zentriert */
+  gap: 0.25em;
   flex-wrap: wrap;
   margin-bottom: 2em;
 }
 
-/* Bild-Styling */
 .bild-text-container img {
-  width: 40%;
+  width: 40%; /* Standardbreite, kann auch inline überschrieben werden */
   height: auto;
   display: block;
   margin: auto 0;
 }
 
-/* Text-Styling */
 .bild-text-container .text {
   flex: 1;
+  font-size: 18px;        /* Textgröße */
+  color: #fff;            /* weiße Schrift */
+  font-family: 'Verdana', serif;
 }
 
-/* RESPONSIV: Ab hier bei kleineren Bildschirmen */
 @media (max-width: 768px) {
   .bild-text-container {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center; /* zentriert horizontal */
+    gap: 0.25em;
   }
 
   .bild-text-container img {
-    width: 100%;
+    width: 120%;           /* Bild größer auf kleineren Bildschirmen */
+    max-width: 100%;     
     margin: 0 auto;
+    order: -1;            /* Bild steht oben */
+    margin-bottom: 0.25em;
   }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="1. Bahnsteig" tags="" position="100,175" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em; margin: 1em 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+
+  .bild-text-container .text {
+    width: 100%;          /* Text nimmt volle Breite */
+  }
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="1. Bahnsteig" tags="" position="100,175" size="100,100">&lt;div class=&quot;bild-text-container&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     Es ist spät am Abend.  
-    Florian kommt außer Atem gegen 21Uhr am Bahnhof an. Auf dem Bahnsteig wartet er angespannt auf den Zug.  
+    Florian kommt außer Atem gegen 21 Uhr am Bahnhof an. Auf dem Bahnsteig wartet er angespannt auf den Zug.  
     Draußen ist es bereits stockdunkel und die grellen Lichter, die den Bahnsteig erleuchten, blenden ihn.  
     Die Lichter beginnen sich in seinem Kopf zu drehen und er spürt, wie seine Beine nachgeben.  
     Schnell setzt er sich auf den Boden, um nicht umzukippen.  
@@ -65,9 +68,9 @@
   &lt;/div&gt;
   &lt;img src=&quot;https://i.ibb.co/Pv998pmt/Bahnhof.png&quot; alt=&quot;Bahnhof&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="10. Telefonat mit Großeltern" tags="" position="1225,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt; 
-  &lt;img src=&quot;https://i.ibb.co/21184tLQ/Telefonat.png&quot; alt=&quot;Telefonat&quot; style=&quot;width: 30%; height: auto; display: block; margin: 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="2" name="10. Telefonat mit Großeltern" tags="" position="1225,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/21184tLQ/Telefonat.png&quot; alt=&quot;Telefonat&quot; style=&quot;width: 30%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian hat das Bedürfnis, mit jemandem über seine Situation zu sprechen, und da kommen ihm nur seine Großeltern in den Sinn.  
       Er holt sein Handy aus der Tasche und ruft sie an.  
@@ -79,50 +82,70 @@
     &lt;/p&gt;
     [[Geh nach Hause-&gt;11a. Zuhause abends]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="11a. Zuhause abends" tags="" position="1350,100" size="100,100">&lt;img src=&quot;https://i.ibb.co/dJgBWwHQ/Streit-mit-Eltern.png&quot; alt=&quot;Streit-mit-Eltern&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;p&gt;
-Florian öffnet die Tür, stellt seine Schuhe und Tasche ab und geht ins Wohnzimmer. Seine Eltern und sein Bruder starren ihn an, als wäre er ein Geist. Seine Mutter pöbelt sofort los: „Was hast du gemacht? Du weißt, dass wir 19:30 essen und du kommst eine halbe Stunde zu spät. Wo warst du in der Zeit? Wenn du lügst, knall ich dir eine und wenn du die Wahrheit sagst, kriegst du vielleicht noch essen!“
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="3" name="11a. Zuhause abends" tags="" position="1350,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;flex-direction: column;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/dJgBWwHQ/Streit-mit-Eltern.png&quot; alt=&quot;Streit-mit-Eltern&quot; style=&quot;width: 50%; height: auto&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Florian öffnet die Tür, stellt seine Schuhe und Tasche ab und geht ins Wohnzimmer. Seine Eltern und sein Bruder starren ihn an, als wäre er ein Geist. Seine Mutter pöbelt sofort los: „Was hast du gemacht? Du weißt, dass wir 19:30 essen und du kommst eine halbe Stunde zu spät. Wo warst du in der Zeit? Wenn du lügst, knall ich dir eine und wenn du die Wahrheit sagst, kriegst du vielleicht noch essen!“
 
-Florians Vater versucht für Ruhe zu sorgen und sagt: „Schatz, rege dich nicht so auf …“  
-Doch die Mutter fährt ihm ins Wort: „Halt die Fresse, Abschaum von Vater! Kommst zu spät nach Hause und tust immer so, als wäre alles in Ordnung. Denkst du, ich merke nicht, dass du fremd gehst?“
+      Florians Vater versucht für Ruhe zu sorgen und sagt: „Schatz, rege dich nicht so auf …“  
+      Doch die Mutter fährt ihm ins Wort: „Halt die Fresse, Abschaum von Vater! Kommst zu spät nach Hause und tust immer so, als wäre alles in Ordnung. Denkst du, ich merke nicht, dass du fremd gehst?“
 
-Der Vater wird ungehalten und schreit zurück: „Sei du mal ruhig, ja! Denkst du, ich hab Bock dich jedes Mal besoffen im Bett zu sehn? Du schaffst es nicht mal, dir einen Job zu suchen, also Fresse ja… Ich bin derjenige, der hier die Miete zahlt. Ich war es, der dir ein Zuhause gegeben hat, nachdem du aus deinem Elternhaus rausgeworfen wurdest. Also sei dankbar!“
+      Der Vater wird ungehalten und schreit zurück: „Sei du mal ruhig, ja! Denkst du, ich hab Bock dich jedes Mal besoffen im Bett zu sehn? Du schaffst es nicht mal, dir einen Job zu suchen, also Fresse ja… Ich bin derjenige, der hier die Miete zahlt. Ich war es, der dir ein Zuhause gegeben hat, nachdem du aus deinem Elternhaus rausgeworfen wurdest. Also sei dankbar!“
 
-Wütend springt der Vater auf und verlässt das Zimmer.  
-Kaum ist die Tür zu, dreht sich die Mutter zu Florian um und brüllt: „Schönen Dank auch… Schau, was du schon wieder angerichtet hast, Arschloch!! Verpiss dich ins Zimmer, los!!!“
-&lt;/p&gt;
-[[Geh auf dein Zimmer-&gt;12a. Zimmer]]</tw-passagedata><tw-passagedata pid="4" name="11b. Zuhause abends" tags="" position="1350,225" size="100,100">&lt;img src=&quot;https://i.ibb.co/dJgBWwHQ/Streit-mit-Eltern.png&quot; alt=&quot;Streit-mit-Eltern&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;p&gt;
-Florian öffnet die Tür, stellt seine Schuhe und Tasche ab und geht ins Wohnzimmer. Seine Eltern und sein Bruder starren ihn an, als wäre er ein Geist. Seine Mutter pöbelt sofort los: „Was hast du gemacht? Du weißt, dass wir 19:30 essen und du kommst eine halbe Stunde zu spät. Wo warst du in der Zeit? Wenn du lügst, knall ich dir eine und wenn du die Wahrheit sagst, kriegst du vielleicht noch essen!“
+      Wütend springt der Vater auf und verlässt das Zimmer.  
+      Kaum ist die Tür zu, dreht sich die Mutter zu Florian um und brüllt: „Schönen Dank auch… Schau, was du schon wieder angerichtet hast, Arschloch!! Verpiss dich ins Zimmer, los!!!“
+    &lt;/p&gt;
+    [[Geh auf dein Zimmer-&gt;12a. Zimmer]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="4" name="11b. Zuhause abends" tags="" position="1350,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;flex-direction: column;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/dJgBWwHQ/Streit-mit-Eltern.png&quot; alt=&quot;Streit-mit-Eltern&quot; style=&quot;width: 50%; height: auto&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Florian öffnet die Tür, stellt seine Schuhe und Tasche ab und geht ins Wohnzimmer. Seine Eltern und sein Bruder starren ihn an, als wäre er ein Geist. Seine Mutter pöbelt sofort los: „Was hast du gemacht? Du weißt, dass wir 19:30 essen und du kommst eine halbe Stunde zu spät. Wo warst du in der Zeit? Wenn du lügst, knall ich dir eine und wenn du die Wahrheit sagst, kriegst du vielleicht noch essen!“
 
-Florians Vater versucht für Ruhe zu sorgen und sagt: „Schatz, rege dich nicht so auf …“  
-Doch die Mutter fährt ihm ins Wort: „Halt die Fresse, Abschaum von Vater! Kommst zu spät nach Hause und tust immer so, als wäre alles in Ordnung. Denkst du, ich merke nicht, dass du fremd gehst?“
+      Florians Vater versucht für Ruhe zu sorgen und sagt: „Schatz, rege dich nicht so auf …“  
+      Doch die Mutter fährt ihm ins Wort: „Halt die Fresse, Abschaum von Vater! Kommst zu spät nach Hause und tust immer so, als wäre alles in Ordnung. Denkst du, ich merke nicht, dass du fremd gehst?“
 
-Der Vater wird ungehalten und schreit zurück: „Sei du mal ruhig, ja! Denkst du, ich hab Bock dich jedes Mal besoffen im Bett zu sehn? Du schaffst es nicht mal, dir einen Job zu suchen, also Fresse ja… Ich bin derjenige, der hier die Miete zahlt. Ich war es, der dir ein Zuhause gegeben hat, nachdem du aus deinem Elternhaus rausgeworfen wurdest. Also sei dankbar!“
+      Der Vater wird ungehalten und schreit zurück: „Sei du mal ruhig, ja! Denkst du, ich hab Bock dich jedes Mal besoffen im Bett zu sehn? Du schaffst es nicht mal, dir einen Job zu suchen, also Fresse ja… Ich bin derjenige, der hier die Miete zahlt. Ich war es, der dir ein Zuhause gegeben hat, nachdem du aus deinem Elternhaus rausgeworfen wurdest. Also sei dankbar!“
 
-Wütend springt der Vater auf und verlässt das Zimmer.  
-Kaum ist die Tür zu, dreht sich die Mutter zu Florian um und brüllt: „Schönen Dank auch… Schau, was du schon wieder angerichtet hast, Arschloch!! Verpiss dich ins Zimmer, los!!!“
-&lt;/p&gt;
-[[Geh auf dein Zimmer-&gt;12a. Zimmer]]</tw-passagedata><tw-passagedata pid="5" name="12a. Zimmer" tags="" position="1475,100" size="100,100">&lt;img src=&quot;https://i.ibb.co/Zp4rqP0y/Abends-Zimmer.png&quot; alt=&quot;Abends-Zimmer&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;p&gt;
-Florian hat die Schnauze voll, er sitzt wütend auf seinem Bett. Seine Gedanken rasen: Warum kriege ich immer den Stress ab? Ich hab kein Bock mehr. Ich will nur noch weg von hier.
+      Wütend springt der Vater auf und verlässt das Zimmer.  
+      Kaum ist die Tür zu, dreht sich die Mutter zu Florian um und brüllt: „Schönen Dank auch… Schau, was du schon wieder angerichtet hast, Arschloch!! Verpiss dich ins Zimmer, los!!!“
+    &lt;/p&gt;
+    [[Geh auf dein Zimmer-&gt;12a. Zimmer]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="5" name="12a. Zimmer" tags="" position="1475,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/Zp4rqP0y/Abends-Zimmer.png&quot; alt=&quot;Abends-Zimmer&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Florian hat die Schnauze voll, er sitzt wütend auf seinem Bett. Seine Gedanken rasen: Warum kriege ich immer den Stress ab? Ich hab kein Bock mehr. Ich will nur noch weg von hier.
 
-Kurzentschlossen packt er seine wichtigsten Sachen zusammen und wartet, bis es in der Wohnung ruhig wird. Endlich Stille. Florian nimmt seine Sachen, öffnet leise die Tür und schleicht mit klopfendem Herzen über den Flur bis zur Haustür.
+      Kurzentschlossen packt er seine wichtigsten Sachen zusammen und wartet, bis es in der Wohnung ruhig wird. Endlich Stille. Florian nimmt seine Sachen, öffnet leise die Tür und schleicht mit klopfendem Herzen über den Flur bis zur Haustür.
 
-Als er die Wohnungstür so leise wie möglich öffnet, knarzt plötzlich etwas laut. Florians Herz rutscht ihm in die Hose. Voller Panik schlägt er die Tür hinter sich zu und rennt so schnell er kann zum Bahnhof.
-&lt;/p&gt;
-[[Beim Bahnhof-&gt;13a. Ende]]</tw-passagedata><tw-passagedata pid="6" name="12b. Zimmer" tags="" position="1475,225" size="100,100">&lt;img src=&quot;https://i.ibb.co/Zp4rqP0y/Abends-Zimmer.png&quot; alt=&quot;Abends-Zimmer&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;p&gt;
-Florian hat die Schnauze voll, er sitzt wütend auf seinem Bett. Seine Gedanken rasen: Warum kriege ich immer den Stress ab? Ich hab kein Bock mehr. Ich will nur noch weg von hier.
+      Als er die Wohnungstür so leise wie möglich öffnet, knarzt plötzlich etwas laut. Florians Herz rutscht ihm in die Hose. Voller Panik schlägt er die Tür hinter sich zu und rennt so schnell er kann zum Bahnhof.
+    &lt;/p&gt;
+    [[Beim Bahnhof-&gt;13a. Ende]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="6" name="12b. Zimmer" tags="" position="1475,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/Zp4rqP0y/Abends-Zimmer.png&quot; alt=&quot;Abends-Zimmer&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Florian hat die Schnauze voll, er sitzt wütend auf seinem Bett. Seine Gedanken rasen: Warum kriege ich immer den Stress ab? Ich hab kein Bock mehr. Ich will nur noch weg von hier.
 
-Kurzentschlossen packt er seine wichtigsten Sachen zusammen und wartet, bis es in der Wohnung ruhig wird. Endlich Stille. Florian nimmt seine Sachen, öffnet leise die Tür und schleicht mit klopfendem Herzen über den Flur bis zur Haustür.
+      Kurzentschlossen packt er seine wichtigsten Sachen zusammen und wartet, bis es in der Wohnung ruhig wird. Endlich Stille. Florian nimmt seine Sachen, öffnet leise die Tür und schleicht mit klopfendem Herzen über den Flur bis zur Haustür.
 
-Als er die Wohnungstür so leise wie möglich öffnet, knarzt plötzlich etwas laut. Florians Herz rutscht ihm in die Hose. Voller Panik schlägt er die Tür hinter sich zu und rennt so schnell er kann zum Bahnhof.
-&lt;/p&gt;
-[[Beim Bahnhof-&gt;13a. Ende]]</tw-passagedata><tw-passagedata pid="7" name="13a. Ende" tags="" position="1600,100" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
+      Als er die Wohnungstür so leise wie möglich öffnet, knarzt plötzlich etwas laut. Florians Herz rutscht ihm in die Hose. Voller Panik schlägt er die Tür hinter sich zu und rennt so schnell er kann zum Bahnhof.
+    &lt;/p&gt;
+    [[Beim Bahnhof-&gt;13a. Ende]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="7" name="13a. Ende" tags="" position="1600,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
   &lt;img src=&quot;https://i.ibb.co/Txbb5Xvr/Bahnhof.png&quot; alt=&quot;Bahnhof&quot; style=&quot;width: 45%; height: auto;&quot;&gt;
-
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian kommt außer Atem auf dem Bahnsteig an und wartet angespannt auf den Zug. Draußen ist es bereits stockdunkel und die grellen Lichter, die den Bahnsteig erleuchten, blenden Florian. Die Lichter beginnen sich in seinem Kopf zu drehen und er fühlt wie seine Beine nachgeben. Schnell setzt er sich auf den Boden, um nicht umzukippen.
 
@@ -132,29 +155,30 @@ Als er die Wohnungstür so leise wie möglich öffnet, knarzt plötzlich etwas l
     &lt;/p&gt;
     [[Wie geht es weiter?-&gt;Abspann]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="13b. Ende" tags="" position="1600,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="8" name="13b. Ende" tags="" position="1600,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
   &lt;img src=&quot;https://i.ibb.co/Txbb5Xvr/Bahnhof.png&quot; alt=&quot;Bahnhof&quot; style=&quot;width: 45%; height: auto;&quot;&gt;
-
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
-Florian kommt außer Atem auf dem Bahnsteig an und wartet angespannt auf den Zug. Draußen ist es bereits stockdunkel und die grellen Lichter, die den Bahnsteig erleuchten, blenden Florian. Die Lichter beginnen sich in seinem Kopf zu drehen und er fühlt wie seine Beine nachgeben. Schnell setzt er sich auf den Boden um nicht umzukippen.
+      Florian kommt außer Atem auf dem Bahnsteig an und wartet angespannt auf den Zug. Draußen ist es bereits stockdunkel und die grellen Lichter, die den Bahnsteig erleuchten, blenden Florian. Die Lichter beginnen sich in seinem Kopf zu drehen und er fühlt, wie seine Beine nachgeben. Schnell setzt er sich auf den Boden, um nicht umzukippen.
 
-Nach einigen Stunden erreicht er endlich das Haus seiner Großeltern. Zum Glück ist noch Licht an und Florian muss niemanden mit seinem Klingeln wecken.
-Verwundert, aber trotzdem herzlich nehmen ihn seine Großeltern auf.
-Florian ist erleichtert.
+      Nach einigen Stunden erreicht er endlich das Haus seiner Großeltern. Zum Glück ist noch Licht an und Florian muss niemanden mit seinem Klingeln wecken. Verwundert, aber trotzdem herzlich nehmen ihn seine Großeltern auf. Florian ist erleichtert.
     &lt;/p&gt;
     [[Wie geht es weiter?-&gt;Abspann]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="2a. Im Zug" tags="" position="225,100" size="100,100">&lt;div style=&quot;text-align: center; margin: 1em 0;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/F4q71gxv/leerer-Zug.png&quot; alt=&quot;leerer-Zug&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;/div&gt;&lt;p&gt;
-  Florian entscheidet sich, auf den nächsten Zug zu warten, in der Hoffnung, dass dieser nicht so überfüllt ist.  
-  Nach einer Stunde fährt dann endlich ein weiterer Zug ein. Florian ist erleichtert: Es sind tatsächlich noch Sitzplätze frei.  
-  Er schaut sich nervös um. Sein Herz rast wie wild, seine Knie fühlen sich wie Wackelpudding an und seine Hände sind sirupmäßig überströmt.  
-  Immer wieder schießen Flashbacks durch seinen Kopf.
-&lt;/p&gt;
-[[Was ist passiert?-&gt;3. Zuhause]]</tw-passagedata><tw-passagedata pid="10" name="2b. Im vollen Zug" tags="" position="225,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="9" name="2a. Im Zug" tags="" position="225,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/F4q71gxv/leerer-Zug.png&quot; alt=&quot;leerer-Zug&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    Florian entscheidet sich, auf den nächsten Zug zu warten, in der Hoffnung, dass dieser nicht so überfüllt ist.  
+    Nach einer Stunde fährt dann endlich ein weiterer Zug ein. Florian ist erleichtert: Es sind tatsächlich noch Sitzplätze frei.  
+    Er schaut sich nervös um. Sein Herz rast wie wild, seine Knie fühlen sich wie Wackelpudding an und seine Hände sind sirupmäßig überströmt.  
+    Immer wieder schießen Flashbacks durch seinen Kopf.
+ 
+[[Was ist passiert?-&gt;3. Zuhause]]
+ &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="2b. Im vollen Zug" tags="" position="225,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot; style=&quot;flex: 1;&quot;&gt;
     &lt;p&gt;
       Florian holt tief Luft und rappelt sich auf.  
       Er zwängt sich durch die Menschenmassen in den Zug. Er findet keinen Sitzplatz mehr und steht dicht gedrängt zwischen Leuten im Fahrradabteil.  
@@ -162,65 +186,77 @@ Florian ist erleichtert.
     &lt;/p&gt;
     [[Was ist passiert?-&gt;3. Zuhause]]
   &lt;/div&gt;
-
-  &lt;img src=&quot;https://i.ibb.co/392qc6jF/Zug-voll.png&quot; alt=&quot;Zug-voll&quot;
-       style=&quot;width: 30%; height: auto; display: block; margin: auto 0;&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="3. Zuhause" tags="" position="350,175" size="100,100">&lt;div style=&quot;text-align: center; margin: 1em 0;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/hJ724knj/Schlafen.png&quot; alt=&quot;Schlafen&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;/div&gt;&lt;p&gt;
-  Florian liegt in seinem Bett und schläft. Er wird vom Geschrei seiner Schwester geweckt.  
-  Genervt dreht Florian sich zur Wand und zieht sich sein Kissen über den Kopf.  
-  Plötzlich fliegt die Zimmertür krachend auf. Seine Mutter kommt ins Zimmer getorkelt und lallt:  
-  „Kümmer dich um deine Schwester und das Frühstück! Jasper braucht seine Ruhe und schläft, also beweg dich!“
-&lt;/p&gt;
-[[Wehr dich-&gt;4b. Diskussion mit Mutter]]  
-[[Steh auf und kümmer dich-&gt;4a. Frühstück]]  
-[[Steh auf und geh direkt zur Schule ohne Frühstück-&gt;5b. Schule]]</tw-passagedata><tw-passagedata pid="12" name="4a. Frühstück" tags="" position="475,100" size="100,100">&lt;div style=&quot;text-align: center; margin: 1em 0;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/tpZhZC34/K-che-morgens.png&quot; alt=&quot;K-che-morgens&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;/div&gt;&lt;p&gt;
-  Florian zieht sich an und geht zu seiner Schwester ins Zimmer.  
-  Nachdem er sie beruhigt hat, gehen sie gemeinsam in die Küche und fangen an, das Essen vorzubereiten.  
-  Im Flur hört Florian seinen Vater, der sich bereit macht zur Arbeit zu gehen.  
-  Er ruft Florian zu: „Pass auf, dass du nicht zu spät zur Schule kommst!“  
-  Florian schaut auf die Uhr und merkt, dass er wirklich spät dran ist.
-&lt;/p&gt;
-[[Stecke etwas zu Essen ein und gehe los-&gt;5a. Schule]]  
-[[Verzichte auf das Frühstück und gehe los-&gt;5b. Schule]]</tw-passagedata><tw-passagedata pid="13" name="4b. Diskussion mit Mutter" tags="" position="475,225" size="100,100">&lt;div style=&quot;text-align: center; margin: 1em 0;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/gMxH5Crq/Streit-mit-Mutter.png&quot; alt=&quot;Streit-mit-Mutter&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;/div&gt;&lt;p&gt;
-  Florian setzt sich zur Wehr: „Ich muss zur Schule, ich kann das leider nicht machen.“  
-  Seine Mutter fällt ihm ins Wort und pöbelt: „Wie nutzlos kann man sein??“  
-  Florian versucht zu antworten, doch seine Mutter lässt ihn nicht ausreden.  
-  Sie schreit: „Ein Sohn der nix kann!! Was will ich noch mit dir?!“, während sie ihm immer näherkommt.  
-  Mit zusammengekniffenen Augen zischt sie ihm ins Gesicht: „Du machst jetzt was ich sage, sonst gibt‘s kein Taschengeld!“  
-  Florian weiß, dass es sinnlos ist weiter zu diskutieren.  
-  Er gibt nach und sagt monoton: „Jaja, ich mach was du willst…“  
-  Daraufhin verlässt er das Zimmer…
-&lt;/p&gt;
-[[Stecke heimlich etwas zu Essen ein und gehe los zur Schule-&gt;5a. Schule]]  
-[[Gehe los zur Schule ohne zu frühstücken-&gt;5b. Schule]]</tw-passagedata><tw-passagedata pid="14" name="5a. Schule" tags="" position="600,100" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/b5zQ8QnZ/Klassenzimmer-korrekt.png&quot; alt=&quot;Klassenzimmer-korrekt&quot; style=&quot;width: 40%; height: auto; display: block; margin: 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/392qc6jF/Zug-voll.png&quot; alt=&quot;Zug-voll&quot; style=&quot;width: 30%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="11" name="3. Zuhause" tags="" position="350,175" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;text-align: center; margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/hJ724knj/Schlafen.png&quot; alt=&quot;Schlafen&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Florian liegt in seinem Bett und schläft. Er wird vom Geschrei seiner Schwester geweckt.  
+      Genervt dreht Florian sich zur Wand und zieht sich sein Kissen über den Kopf.  
+      Plötzlich fliegt die Zimmertür krachend auf. Seine Mutter kommt ins Zimmer getorkelt und lallt:  
+      „Kümmer dich um deine Schwester und das Frühstück! Jasper braucht seine Ruhe und schläft, also beweg dich!“
+ 
+      [[Wehr dich-&gt;4b. Diskussion mit Mutter]]
+      [[Steh auf und kümmer dich-&gt;4a. Frühstück]]
+      [[Steh auf und geh direkt zur Schule ohne Frühstück-&gt;5b. Schule]]
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="12" name="4a. Frühstück" tags="" position="475,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/tpZhZC34/K-che-morgens.png&quot; alt=&quot;K-che-morgens&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    Florian zieht sich an und geht zu seiner Schwester ins Zimmer.  
+    Nachdem er sie beruhigt hat, gehen sie gemeinsam in die Küche und fangen an, das Essen vorzubereiten.  
+    Im Flur hört Florian seinen Vater, der sich bereit macht zur Arbeit zu gehen.  
+    Er ruft Florian zu: „Pass auf, dass du nicht zu spät zur Schule kommst!“  
+    Florian schaut auf die Uhr und merkt, dass er wirklich spät dran ist.
+    
+    [[Stecke etwas zu Essen ein und gehe los-&gt;5a. Schule]]  
+    [[Verzichte auf das Frühstück und gehe los-&gt;5b. Schule]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="4b. Diskussion mit Mutter" tags="" position="475,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/gMxH5Crq/Streit-mit-Mutter.png&quot; alt=&quot;Streit-mit-Mutter&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    Florian setzt sich zur Wehr: „Ich muss zur Schule, ich kann das leider nicht machen.“  
+    Seine Mutter fällt ihm ins Wort und pöbelt: „Wie nutzlos kann man sein??“  
+    Florian versucht zu antworten, doch seine Mutter lässt ihn nicht ausreden.  
+    Sie schreit: „Ein Sohn der nix kann!! Was will ich noch mit dir?!“, während sie ihm immer näherkommt.  
+    Mit zusammengekniffenen Augen zischt sie ihm ins Gesicht: „Du machst jetzt was ich sage, sonst gibt‘s kein Taschengeld!“  
+    Florian weiß, dass es sinnlos ist weiter zu diskutieren.  
+    Er gibt nach und sagt monoton: „Jaja, ich mach was du willst…“  
+    Daraufhin verlässt er das Zimmer…
+    
+    [[Stecke heimlich etwas zu Essen ein und gehe los zur Schule-&gt;5a. Schule]]  
+    [[Gehe los zur Schule ohne zu frühstücken-&gt;5b. Schule]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="14" name="5a. Schule" tags="" position="600,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/b5zQ8QnZ/Klassenzimmer-korrekt.png&quot; alt=&quot;Klassenzimmer-korrekt&quot; style=&quot;width: 40%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian kommt gerade noch pünktlich in seiner Klasse an.  
       Zu seiner großen Überraschung teilt der Mathelehrer einen unangekündigten Test aus.  
       Zum Glück hat Florian etwas gegessen, dadurch kann er sich konzentrieren und den Mathetest einigermaßen gut schaffen.
     &lt;/p&gt;
-[[Gehe in die Mensa-&gt;6. Mensa]]
+    [[Gehe in die Mensa-&gt;6. Mensa]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="5b. Schule" tags="" position="600,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/b5zQ8QnZ/Klassenzimmer-korrekt.png&quot; alt=&quot;Klassenzimmer-korrekt&quot; style=&quot;width: 50%; height: auto; display: block; margin: 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="15" name="5b. Schule" tags="" position="600,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/b5zQ8QnZ/Klassenzimmer-korrekt.png&quot; alt=&quot;Klassenzimmer-korrekt&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian kommt gerade noch pünktlich in seiner Klasse an.  
       Zu seinem großen Leid teilt der Mathelehrer einen unangekündigten Test aus. Florian ist verzweifelt, sein Magen knurrt, seine Gedanken kreisen unaufhörlich. Er hat große Sorgen. Sorgen, um das wahrscheinlich schlechte Ergebnis des Tests. Gleichzeitig macht er sich Vorwürfe, dass er selber schuld ist, weil er nichts gegessen hat.  
       Noch bevor er es schafft die Aufgaben überhaupt zu lesen, ist die Zeit um und Florians Blatt bleibt leer…
     &lt;/p&gt;
-[[Gehe in die Mensa-&gt;6. Mensa]]
+    [[Gehe in die Mensa-&gt;6. Mensa]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="6. Mensa" tags="" position="725,175" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;img src=&quot;https://i.ibb.co/bjmBg0Vz/Mensa.png&quot; alt=&quot;Mensa&quot; style=&quot;width: 35%; height: auto; display: block; margin: 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="16" name="6. Mensa" tags="" position="725,175" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/bjmBg0Vz/Mensa.png&quot; alt=&quot;Mensa&quot; style=&quot;width: 35%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian geht in die Mensa, die überfüllt wirkt. Er holt sich ein Tablett und stellt sich in der Schlange an.  
       Plötzlich spürt er, wie eine Hand auf seine Schulter drückt. Erschrocken dreht er sich um und sieht seinen Klassenkameraden Jason vor sich stehen.  
@@ -230,32 +266,40 @@ Florian ist erleichtert.
     [[Gib Jason dein Geld-&gt;7a. Mensa]]  
     [[Gib kein Geld-&gt;7b. Cafeteria]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="7a. Mensa" tags="" position="850,100" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="17" name="7a. Mensa" tags="" position="850,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Jason lacht und sagt: „Geht doch.“  
       Florian ist angepisst, dass Jason ihn gezwungen hat ihm sein Geld zu geben, aber zum Glück hat er zu Hause noch etwas Erspartes versteckt.
     &lt;/p&gt;
     [[Einige Stunden später-&gt;8. Skaterbahn]]
   &lt;/div&gt;
-  &lt;img src=&quot;https://i.ibb.co/7xwGFYv8/Mensa-Jason.png&quot; alt=&quot;Mensa-Jason&quot; style=&quot;width: 40%; height: auto; display: block; margin: 0;&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="7b. Cafeteria" tags="" position="850,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/7xwGFYv8/Mensa-Jason.png&quot; alt=&quot;Mensa-Jason&quot; style=&quot;width: 40%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="18" name="7b. Cafeteria" tags="" position="850,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
-Florian fühlt eine innere Entschlossenheit, sich zur Wehr zu setzen. Er beschließt zu lügen und sagt: „Ich hab kein Geld.“ 
-Jason lacht ihn aus. &quot;Hab von dir nichts anderes erwartet“, sagt er spöttisch. Zischend fügt er hinzu: „Opfer!“ Dann dreht er sich um und geht.
+      Florian fühlt eine innere Entschlossenheit, sich zur Wehr zu setzen. Er beschließt zu lügen und sagt: „Ich hab kein Geld.“  
+      Jason lacht ihn aus. &quot;Hab von dir nichts anderes erwartet“, sagt er spöttisch. Zischend fügt er hinzu: „Opfer!“ Dann dreht er sich um und geht.
     &lt;/p&gt;
     [[Einige Stunden später-&gt;8. Skaterbahn]]
   &lt;/div&gt;
-  &lt;img src=&quot;https://i.ibb.co/7xwGFYv8/Mensa-Jason.png&quot; alt=&quot;Mensa-Jason&quot; style=&quot;width: 40%; height: auto; display: block; margin: 0;&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="8. Skaterbahn" tags="" position="975,175" size="100,100">&lt;img src=&quot;https://i.ibb.co/XrHt4HyS/Skaterpark.png&quot; alt=&quot;Skaterpark&quot; style=&quot;width: 50%; height: auto; display: block; margin: 1em auto;&quot;&gt;
-&lt;p&gt;
-Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterbahn, um sich mit seinen Freunden zu treffen. Dort angekommen dreht er erstmal eine Runde mit dem Skateboard. Nach etwa einer halben Stunde ruft einer seiner Freunde, Phillip, die Gruppe zusammen. Phillip holt eine Tüte mit bunten Tabletten aus der Tasche und fragt grinsend: „Wer will viele, viele bunte Smarties?“ Die Freunde greifen freudig zu.
-&lt;/p&gt;
-[[Schluck einen Smartie-&gt;Game Over]]  
-[[Frag nach, was das ist-&gt;9a Erklärung]]  
-[[Nimm keinen Smartie-&gt;9b F. geht]]</tw-passagedata><tw-passagedata pid="20" name="9a Erklärung" tags="" position="1225,100" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/7xwGFYv8/Mensa-Jason.png&quot; alt=&quot;Mensa-Jason&quot; style=&quot;width: 40%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="19" name="8. Skaterbahn" tags="" position="975,175" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
+    &lt;p&gt;
+      Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterbahn, um sich mit seinen Freunden zu treffen. Dort angekommen dreht er erstmal eine Runde mit dem Skateboard. Nach etwa einer halben Stunde ruft einer seiner Freunde, Phillip, die Gruppe zusammen. Phillip holt eine Tüte mit bunten Tabletten aus der Tasche und fragt grinsend: „Wer will viele, viele bunte Smarties?“ Die Freunde greifen freudig zu.
+    &lt;/p&gt;
+    [[Schluck einen Smartie-&gt;Game Over]]  
+    [[Frag nach, was das ist-&gt;9a Erklärung]]  
+    [[Nimm keinen Smartie-&gt;9b F. geht]]
+  &lt;/div&gt;
+  &lt;img src=&quot;https://i.ibb.co/XrHt4HyS/Skaterpark.png&quot; alt=&quot;Skaterpark&quot; style=&quot;width: 50%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="20" name="9a Erklärung" tags="" position="1225,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Phillip erklärt: „Die bunten Smarties räumen dir deine Probleme aus dem Weg. Nimm mal einen. Trust me.“  
       Florian zweifelt und fragt: „Bis du sicher?“  
@@ -265,10 +309,11 @@ Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterb
     [[Schluck trotzdem den Smartie-&gt;Game Over]]  
     [[Gib den Smartie zurück-&gt;9b F. geht]]
   &lt;/div&gt;
-  &lt;img src=&quot;https://i.ibb.co/sdP6gXhs/Pillen.png&quot; alt=&quot;Pillen&quot; style=&quot;width: 35%; height: auto; display: block; margin: 0;&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="9b F. geht" tags="" position="1100,225" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt; 
-  &lt;img src=&quot;https://i.ibb.co/KxXrpNfg/Parkbank.png&quot; alt=&quot;Parkbank&quot; style=&quot;width: 30%; height: auto; display: block; margin: 0;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/sdP6gXhs/Pillen.png&quot; alt=&quot;Pillen&quot; style=&quot;width: 35%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="21" name="9b F. geht" tags="" position="1100,225" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;img src=&quot;https://i.ibb.co/KxXrpNfg/Parkbank.png&quot; alt=&quot;Parkbank&quot; style=&quot;width: 30%; height: auto;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian nimmt die Tablette nicht. Phillip sagt einen provokanten Spruch, den Florian erstmal ignoriert.
       Nach etwa 20 Minuten zeigen sich die ersten Wirkungen der Smarties. Die Gesprächsthemen drehen sich immer mehr um Sex und Mädchen, aber auch Beziehungen und Sprüche, die aus Vernunftsgründen von den Autor*innen hier nicht genannt werden können.  
@@ -282,9 +327,12 @@ Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterb
     [[Hol dein Handy raus und rufe deine Großeltern an-&gt;10. Telefonat mit Großeltern]]  
     [[Geh nach Hause-&gt;11b. Zuhause abends]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Abspann" tags="" position="1725,175" size="100,100">&lt;style&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="22" name="Abspann" tags="" position="1725,175" size="100,100">&lt;div id=&quot;endseite&quot;&gt;
+&lt;style&gt;
   .custom-section {
-    font-size: 17px;
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
     color: #fff; /* weißer Text */
     border: 2px solid #cc0000;
     padding: 1em;
@@ -295,7 +343,7 @@ Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterb
     background: #222;
   }
   .custom-section h2 {
-    font-size: 17px;
+    font-size: 20px;
     margin-top: 0.8em;
     margin-bottom: 0.3em;
     font-weight: 600;
@@ -324,23 +372,23 @@ Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterb
 
 &lt;div class=&quot;custom-section&quot;&gt;
   &lt;h2&gt;Was hätte Florian noch tun können?&lt;/h2&gt;
-  &lt;p&gt;Wenn du dich in einer schwierigen Situation befindest, musst du nicht warten, bis die Krise extrem wird, um dir Hilfe zu holen. Du hast ein Recht auf Unterstützung und bist nicht allein. Neben Freunden und Familienmitgliedern sind diese Anlaufstellen für dich da:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;📧 &lt;a href=&quot;https://jugendnotmail.berlin/&quot; target=&quot;_blank&quot;&gt;jugendnotmail.berlin&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;📞 &lt;a href=&quot;https://www.berlin.de/notdienst-kinderschutz/jugendnotdienst/&quot; target=&quot;_blank&quot;&gt;Jugendnotdienst Berlin&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;👥 &lt;a href=&quot;https://efb-berlin.de/ei/wie-laeuft-unsere-beratung-ab/fuer-jugendliche/&quot; target=&quot;_blank&quot;&gt;Erziehungs- und Familienberatung Berlin&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;🚑 &lt;a href=&quot;https://www.berliner-krisendienst.de/&quot; target=&quot;_blank&quot;&gt;Berliner Krisendienst&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;h2&gt;ℹ️ Kleine Erklärung&lt;/h2&gt;
+  &lt;p&gt;Wenn du dich in einer schwierigen Situation befindest, musst du nicht warten, bis die Krise extrem wird, um dir Hilfe zu holen. Du hast ein Recht auf Unterstützung und bist nicht allein. Neben Freunden und Familienmitgliedern sind diese Anlaufstellen für dich da:&lt;/p&gt; &lt;ul&gt;
+    &lt;li&gt;📧 &lt;a href=&quot;https://jugendnotmail.berlin/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;jugendnotmail.berlin&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;📞 &lt;a href=&quot;https://www.berlin.de/notdienst-kinderschutz/jugendnotdienst/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Jugendnotdienst Berlin&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;👥 &lt;a href=&quot;https://efb-berlin.de/ei/wie-laeuft-unsere-beratung-ab/fuer-jugendliche/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Erziehungs- und Familienberatung Berlin&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;🚑 &lt;a href=&quot;https://www.berliner-krisendienst.de/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Berliner Krisendienst&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt; &lt;h2&gt;ℹ️ Kleine Erklärung&lt;/h2&gt;
   &lt;p&gt;Diese Geschichte ist frei erfunden, basiert aber auf Erfahrungen, die Jugendliche leider manchmal wirklich machen. Sie soll zum Nachdenken anregen.
   Die Bilder wurden mit Hilfe von Künstlicher Intelligenz generiert. Daher kann es vorkommen, dass sich das Aussehen der Charaktere im Laufe der Geschichte leicht verändert.
   
   Die Autoren und Entwickler dieser Geschichte sind: 
   Jonny, Daniel &amp; Leonie aus der Berufsorientierung der Jugendberufshilfe am Rot-Kreuz-Institut in Berlin Kladow.&lt;/p&gt;
   &lt;p&gt;Wir würden uns sehr über dein Feedback freuen!&lt;/p&gt;
-  &lt;p&gt;📬 &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfBwUSjA_qXaZFpI2RGfiUwwVUlkI-m_xVeVkCD5ce0NYdpAg/viewform?usp=dialog&quot; target=&quot;_blank&quot;&gt;Feedback geben&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Game Over" tags="" position="1100,100" size="100,100">&lt;div style=&quot;display: flex; align-items: center; gap: 1em;&quot;&gt;
-  &lt;div style=&quot;flex: 1;&quot;&gt;
+  &lt;p&gt;📬 &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfBwUSjA_qXaZFpI2RGfiUwwVUlkI-m_xVeVkCD5ce0NYdpAg/viewform?usp=dialog&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Feedback geben&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="23" name="Game Over" tags="" position="1100,100" size="100,100">&lt;div class=&quot;bild-text-container&quot; style=&quot;margin: 1em 0;&quot;&gt;
+  &lt;div class=&quot;text&quot;&gt;
     &lt;p&gt;
       Florian schluckt die Tablette. Schon nach kurzer Zeit wird ihm schwindelig und übel.  
       Er bricht zusammen und wird ins Krankenhaus geliefert.  
@@ -349,21 +397,27 @@ Die Schule ist für heute zu Ende und Florian macht sich auf den Weg zur Skaterb
     [[Zurück auf Anfang-&gt;3. Zuhause]]  
     [[Zurück letzte Szene-&gt;8. Skaterbahn]]
   &lt;/div&gt;
-  &lt;img src=&quot;https://i.ibb.co/N6T6r89W/Kollaps.png&quot; style=&quot;width: 30%; height: auto; display: block; margin: 0;&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Titelseite" tags="" position="100,50" size="100,100">&lt;div style=&quot;border: 2px solid #cc0000; padding: 1em; border-radius: 8px; max-width: 600px; width: 90%; margin: 1em auto; background: #222; text-align: center;&quot;&gt;
- &lt;p style=&quot;font-size: 19px; color: #FFD700;&quot;&gt;Herzlich Willkommen 
- zu unserer interaktiven Geschichte!&lt;/p&gt;
-  &lt;p&gt;Ihr dürft entscheiden, wie es weitergeht, 
-  indem ihr die [[blaue-&gt;1. Bahnsteig]] Schrift antippt.&lt;/p&gt;
-  &lt;p&gt;Viel Spaß beim Entdecken von Florians Geschichte!&lt;/p&gt;
-  &lt;p style=&quot;color: #cc0000; font-weight: bold; margin: 1em 0;&quot;&gt;
-    ⚠️ Trigger-Warnung:&lt;br&gt;
-    Es geht um &lt;em&gt;häusliche Gewalt, Drogen, Mobbing&lt;/em&gt;.
-  &lt;/p&gt;
-  &lt;p&gt;Am Ende der Geschichte könnt ihr gerne Verbesserungswünsche äußern.&lt;br&gt;
-  Wir sind offen für alles und freuen uns auf eure Rückmeldungen und Ideen ❤️&lt;/p&gt;
-  [[Geschichte starten-&gt;1. Bahnsteig]]
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+  &lt;img src=&quot;https://i.ibb.co/N6T6r89W/Kollaps.png&quot; alt=&quot;Kollaps&quot; style=&quot;width: 30%; height: auto;&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="24" name="Titelseite" tags="" position="100,50" size="100,100">&lt;div id=&quot;titelseite&quot;&gt;
+  &lt;div style=&quot;border: 2px solid #cc0000; padding: 1em; border-radius: 8px; max-width: 600px; width: 90%; margin: 1em auto; background: #222; text-align: center; font-family: Verdana, sans-serif; font-size: 18px&quot;&gt;
+    &lt;p style=&quot;font-size: 20px; color: #FFD700; margin-bottom: 0.5em;&quot;&gt;
+      Herzlich Willkommen zu unserer interaktiven Geschichte!
+    &lt;/p&gt; &lt;p&gt;
+      Ihr dürft entscheiden, wie es weitergeht, indem ihr die [[blaue-&gt;1. Bahnsteig]] Schrift antippt.
+    &lt;/p&gt; &lt;p&gt;
+      Viel Spaß beim Entdecken von Florians Geschichte!
+    &lt;/p&gt; &lt;p style=&quot;color: #cc0000; font-weight: bold; margin: 1em 0;&quot;&gt;
+      ⚠️ Trigger-Warnung:&lt;br&gt;
+      Es geht um &lt;em&gt;häusliche Gewalt, Drogen, Mobbing&lt;/em&gt;.
+    &lt;/p&gt; &lt;p&gt;
+      Am Ende der Geschichte könnt ihr gerne Verbesserungswünsche äußern.&lt;br&gt;
+      Wir sind offen für alles und freuen uns auf eure Rückmeldungen und Ideen ❤️
+    &lt;/p&gt;
+    [[Geschichte starten-&gt;1. Bahnsteig]]
+  &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
